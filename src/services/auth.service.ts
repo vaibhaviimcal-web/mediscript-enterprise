@@ -26,8 +26,7 @@ export class AuthService {
     email: string,
     password: string,
     displayName: string,
-    role: UserRole,
-    clinicId?: string
+    role: UserRole
   ): Promise<User> {
     try {
       // Create Firebase auth user
@@ -47,7 +46,6 @@ export class AuthService {
         displayName: displayName,
         role: role,
         permissions: getRolePermissions(role),
-        clinicId: clinicId,
         isActive: true,
         createdAt: new Date(),
         updatedAt: new Date(),
